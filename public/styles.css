@@ -1,0 +1,84 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.topbar{
+    width: 100vw;
+    height: 20vh;
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+        url('/images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: rgb(30, 30, 30);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: sticky;
+    top: 0;
+}
+
+.topbar span{
+    align-self: center;
+    font-size: 3rem;
+    font-weight: 600;
+    padding-left: 7vw;
+}
+
+.topbar a{
+    align-self: center;
+    justify-self: end;
+    font-size: 1.5rem;
+    padding-right: 7vw;
+    text-decoration: none;
+    color: rgb(30, 30, 30);
+    font-weight: 600;
+}
+
+.read{
+    display: grid;
+    width: 100vw;
+    height: fit-content;
+    justify-content: center;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.list{
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    width: 84vw;
+    height: fit-content;
+    border-collapse: collapse;
+}
+
+.list th, .list td{
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.list th.action, .list td.action {
+    border: none;}
+
+.crud{
+    background-color: white;  
+    border: 1px solid rgb(128, 128, 128);  
+    height: 1.5rem;
+    width: fit-content;
+    padding: 0.2rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.crud a{
+    color: rgb(30, 30, 30);
+    text-decoration: none;
+    font-weight: 550;
+}
+
+.crud:hover{
+    background-color: rgb(128, 128, 128);
+}

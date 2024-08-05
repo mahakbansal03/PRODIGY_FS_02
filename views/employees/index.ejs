@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <% if (user) { %>
+        <div class="topbar">
+            <span>Welcome, <%= user.username %> !</span>
+            <a href="/logout">Logout</a>
+        </div>
+        <% } %>
+            <div class="read">
+                <h1>Employee List</h1>
+                <button class="crud">
+                    <a href="/employees/add">Add Employee</a>
+                </button>
+                <table class="list">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Department</th>
+                            <th>Email</th>
+                            <th>Salary</th>
+                            <th class="action"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% employees.forEach(employee=> { %>
+                            <tr>
+                                <td>
+                                    <%= employee.name %>
+                                </td>
+                                <td>
+                                    <%= employee.position %>
+                                </td>
+                                <td>
+                                    <%= employee.department %>
+                                </td>
+                                <td>
+                                    <%= employee.email %>
+                                </td>
+                                <td>
+                                    <%= employee.salary %>
+                                </td>
+                                <td class="action">
+                                    <button class="crud">
+                                        <a href="/employees/edit/<%= employee.id %>">Edit</a>
+                                    </button>&nbsp;
+                                    <button class="crud">
+                                        <a href="/employees/delete/<%= employee.id %>">Delete</a>
+                                    </button>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <% if (user) { %>
+        <div class="topbar">
+            <span>Welcome, <%= user.username %> !</span>
+            <a href="/logout">Logout</a>
+        </div>
+        <% } %>
+        <div class="read" style="justify-content: left; width: 93vw; padding-left: 7vw;">
+    <h1>Edit Employee</h1>
+    <form action="/employees/edit/<%= employee.id %>" method="POST">
+        <div class="labelbox">
+        <label for="name">Name:</label>
+        </div>
+        <input type="text" id="name" name="name" value="<%= employee.name %>" required> <br><br>
+        <div class="labelbox">
+        <label for="position">Position:</label>
+        </div>
+        <input type="text" id="position" name="position" value="<%= employee.position %>" required> <br><br>
+        <div class="labelbox">
+        <label for="department">Department:</label>
+        </div>
+        <input type="text" id="department" name="department" value="<%= employee.department %>" required> <br><br>
+        <div class="labelbox">
+        <label for="email">Email:</label>
+        </div>
+        <input type="email" id="email" name="email" value="<%= employee.email %>" required> <br><br>
+        <div class="labelbox">
+        <label for="salary">Salary:</label>
+        </div>
+        <input type="number" id="salary" name="salary" value="<%= employee.salary %>" required><br><br>
+        <button class="crud" type="submit">Update Employee</button>
+    </form>
+</div>
+</body>
+</html>
